@@ -1,5 +1,4 @@
-const CarData = 
-[
+export default [
    {
       "Name":"chevrolet chevelle malibu",
       "pic":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/1966_Chevrolet_Chevelle_SS_%2832985111206%29.jpg/280px-1966_Chevrolet_Chevelle_SS_%2832985111206%29.jpg",

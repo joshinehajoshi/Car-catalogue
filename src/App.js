@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import Header from './Components/Header';
 import Contact from './Components/Contact';
 import About from './Components/About';
-
+import Catalogue from './Components/Catalogue'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/contact' element={<Contact />} />
+        <Route exact path='/catalogue' element={<Catalogue />} />
       </Routes>
     </Router>
     </>

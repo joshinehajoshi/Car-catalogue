@@ -6,6 +6,21 @@ import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 function Catalogue() {
     const [carData, setCarData] = useState(null);
     const [data, setData] = useState(null);
+    const [origin, setOrigin] = useState("");
+
+    const UsaOrigin = () => {
+        setOrigin("USA")
+    }
+
+    const EurpOrigin = () => {
+        setOrigin("Europe")
+    }
+
+    const JapanOrigin = () => {
+        setOrigin("Japan")
+    }
+
+
 
     useEffect(() => {
         setData(CarData);
@@ -19,8 +34,11 @@ function Catalogue() {
 
   return <div>
       <h1>Catalogue</h1>
+      <button onClick={UsaOrigin}>USA</button>
+      <button onClick={EurpOrigin}>Europe</button>
+      <button onClick={JapanOrigin}>Japan</button>
       <div className="catalogue-wrapper">
-      {CarData.map((a) => {
+      {CarData.filter(person => person.Origin == origin).map((a) => {
           return (
               <div className="catalogue-card">
             <Card style={{ width: '18rem' }}>
@@ -33,9 +51,10 @@ function Catalogue() {
               </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-              <ListGroupItem>Cras justo odio</ListGroupItem>
-              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+              <ListGroupItem><b>Origin: </b>{a.Origin}</ListGroupItem>
+              <ListGroupItem><b>Horse Power: </b>{a.Horsepower}</ListGroupItem>
+              <ListGroupItem><b>Weight in lbs: </b>{a.Weight_in_lbs}</ListGroupItem>
+              <ListGroupItem><b>Year: </b>{a.Year}</ListGroupItem>
             </ListGroup>
             <Card.Body>
               <Card.Link href="#">Card Link</Card.Link>

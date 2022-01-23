@@ -7,3 +7,14 @@
 .catalogue-card {
     padding: 2rem;
 }
+
+.filter-header {
+    text-align: center;
+    background-color: gray;
+    padding: 2rem;
+}
+
+button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import CarData from './Data/CarData';
 import '../styling/catalogue.css';
-import { Card, ListGroup, ListGroupItem, Carousel } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, Carousel, Button } from 'react-bootstrap';
 
 function Catalogue() {
     const [carData, setCarData] = useState(null);
     const [data, setData] = useState(null);
     const [origin, setOrigin] = useState("");
+    const [year, setYear] = useState("");
 
     const UsaOrigin = () => {
         setOrigin("USA")
@@ -19,6 +20,58 @@ function Catalogue() {
     const JapanOrigin = () => {
         setOrigin("Japan")
     }
+
+    const SeventyYear = () => {
+        setYear("1970-01-01")
+    }
+    const SeventyOneYear = () => {
+        setYear("1971-01-01")
+    }
+    const SeventyTwoYear = () => {
+        setYear("1972-01-01")
+    }
+
+    const SeventyThreeYear = () => {
+        setYear("1973-01-01")
+    }
+
+    const SeventyFourYear = () => {
+        setYear("1974-01-01")
+    }
+
+    const SeventyFiveYear = () => {
+        setYear("1975-01-01")
+    }
+
+    const SeventySixYear = () => {
+        setYear("1976-01-01")
+    }
+
+    const SeventySevenYear = () => {
+        setYear("1977-01-01")
+    }
+
+    const SeventyEightYear = () => {
+        setYear("1978-01-01")
+    }
+
+    const SeventyNineYear = () => {
+        setYear("1979-01-01")
+    }
+
+    const EightyYear = () => {
+        setYear("1980-01-01")
+    }
+
+    const EightyOneYear = () => {
+        setYear("1981-01-01")
+    }
+
+    const EightyTwoYear = () => {
+        setYear("1982-01-01")
+    }
+
+
 
 
 
@@ -71,11 +124,33 @@ function Catalogue() {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-      <button onClick={UsaOrigin}>USA</button>
-      <button onClick={EurpOrigin}>Europe</button>
-      <button onClick={JapanOrigin}>Japan</button>
+      <div className="filter-header">
+        <div>
+            <h3>Filter Cars by Country of Origin</h3>
+            <Button variant="dark" onClick={UsaOrigin}>USA</Button>
+            <Button variant="dark" onClick={EurpOrigin}>Europe</Button>
+            <Button variant="dark" onClick={JapanOrigin}>Japan</Button>
+        </div>
+        <div className="pt-4">
+            <h3>Filter Cars by Year</h3>
+            <Button variant="dark" onClick={SeventyYear}>1970</Button>
+            <Button variant="dark" onClick={SeventyOneYear}>1971</Button>
+            <Button variant="dark" onClick={SeventyTwoYear}>1972</Button>
+            <Button variant="dark" onClick={SeventyThreeYear}>1973</Button>
+            <Button variant="dark" onClick={SeventyFourYear}>1974</Button>
+            <Button variant="dark" onClick={SeventyFiveYear}>1975</Button>
+            <Button variant="dark" onClick={SeventySixYear}>1976</Button>
+            <Button variant="dark" onClick={SeventySevenYear}>1977</Button>
+            <Button variant="dark" onClick={SeventyEightYear}>1978</Button>
+            <Button variant="dark" onClick={SeventyNineYear}>1979</Button>
+            <Button variant="dark" onClick={EightyYear}>1980</Button>
+            <Button variant="dark" onClick={EightyOneYear}>1981</Button>
+            <Button variant="dark" onClick={EightyTwoYear}>1982</Button>
+        </div>
+
+      </div>
       <div className="catalogue-wrapper">
-      {CarData.filter(person => person.Origin == origin).map((a) => {
+      {CarData.filter(person => person.Origin == origin || person.Year == year).map((a) => {
           return (
               <div className="catalogue-card">
             <Card style={{ width: '18rem' }}>
